@@ -1,17 +1,17 @@
-require_all './lib/utils'
+require_all './lib/advent_of_code/utils'
 
 class Year2023Day1 < Day
 
-  def self.process_part1
-    data = read_file("day1_input")
-    num_data = data.map{|line| line.gsub(/[^0-9]/, '')}
+  def self.process_part1 input
+    input = input.split("\n")
+    num_data = input.map{|line| line.gsub(/[^0-9]/, '')}
     values = num_data.map{|num| "#{num.chars.first}#{num.chars.last}".to_i}
     return values.sum
   end
 
-  def self.process_part2
-    data = read_file("day1_input")
-    values = data.map{|line| value_from_line(line)}
+  def self.process_part2 input
+    input = input.split("\n")
+    values = input.map{|line| value_from_line(line)}
     return values.sum
   end
 
